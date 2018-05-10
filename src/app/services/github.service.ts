@@ -25,20 +25,17 @@ export class GithubService {
   }
 
   getProjects(): Observable <Project[]> {
-    console.log('getProjects called');
     this.messageService.add('ProjectService: fetched projects');
-    const feedback = this.http.get<{ items: Project[] }>(this.gitHubUrl)
+    return this.http.get<{ items: Project[] }>(this.gitHubUrl)
     .pipe(
       map(response => {
         return response.items.map(project => Object.assign(new Project(), project));
       })
     );
-    console.log('feedback', feedback);
-    return feedback;
-    // return of(PROJECTS);
   }
 
   getProject(id: number): Observable<Project> {
+    console.log('getProject called');
     this.messageService.add(`GithubService: fetched project id=${id}`);
     return of(PROJECTS.find(project => project.id === id));
   }

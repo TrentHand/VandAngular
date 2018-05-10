@@ -1,9 +1,8 @@
 <h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let project of projects" class="col-1-4"
-      routerLink="/detail/{{project.id}}">
-    <div class="module project">
-      <h4>{{project.name}}</h4>
-    </div>
-  </a>
+
+<div class="row card-group">
+  <div class="col-4"  *ngFor="let project of projects; let i = index">
+      <a href="#project-{{ i }}" class="btn btn-info" data-toggle="collapse">{{project.name}}</a>
+  </div>
 </div>
+

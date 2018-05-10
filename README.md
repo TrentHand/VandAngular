@@ -1,5 +1,16 @@
 # VandAngular
 
+An Angular5/Bootstrap application using the GitHub API.
+Primary purpose: display the most starred public Angular projects from GitHub.
+
+##Project Architecture
+Each section of the code is divided into an individual componenet. Routing is handled from the app_routing.module.ts file.
+
+GitHub Api calls are held in the github.service.ts file. 
+
+#Installation instructions
+Clone this repository onto your local machine. Run '$npm install' from your terminal to load all required dependencies. Once completed, follow instructions below. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
 ## Development server

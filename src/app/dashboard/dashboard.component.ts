@@ -1,6 +1,7 @@
 import { GithubService } from './../services/github.service';
 import { Project } from './../project';
 import { Component, OnInit } from '@angular/core';
+import { cleanSession } from 'selenium-webdriver/safari';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +18,8 @@ export class DashboardComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.githubService.getProjects()
+    const x = this.githubService.getProjects()
       .subscribe(projects => this.projects = projects);
+    console.log('x: ', x);
   }
 }

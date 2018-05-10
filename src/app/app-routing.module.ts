@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'detail/:id', component: ProjectDetailComponent },
+  // { path: 'detail/:id', component: ProjectDetailComponent },
   { path: 'dashboard', component: DashboardComponent }
 ];
 
