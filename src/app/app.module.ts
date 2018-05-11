@@ -8,6 +8,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
+import { FilterPipe} from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http'
     ProjectsComponent,
     ProjectDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

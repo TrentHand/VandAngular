@@ -1,13 +1,14 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
 <h2>Angular Projects</h2>
 
 <div class="container" *ngFor="let project of projects; let i = index">
-  <a href="#project-{{ i }}" class="btn btn-info" data-toggle="collapse">{{project.name}}</a>
+  <div class="btn btn-info" data-toggle="collapse">{{project.name}}</div>
   <div id="project-{{ i }}" class="collapse">
     <ul>
       <li> {{project.id}}</li>
       <li> {{project.description}}</li>
-      <li> {{project.created_at}}</li>
-      <li> {{project.pushed_at}}</li>
+      <li> {{project.created_at|date}}</li>
+      <li> {{project.pushed_at|date}}</li>
     </ul>
   </div>
 </div>

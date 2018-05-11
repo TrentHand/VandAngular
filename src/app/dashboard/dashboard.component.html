@@ -1,8 +1,16 @@
-<h3>Top Heroes</h3>
-
+<h3>Top Projects</h3>
+<p>Click any project to see details</p>
 <div class="row card-group">
-  <div class="col-4"  *ngFor="let project of projects; let i = index">
-      <a href="#project-{{ i }}" class="btn btn-info" data-toggle="collapse">{{project.name}}</a>
+  <div class="col-4"  *ngFor="let project of projects|filter : searchText; let i = index">
+      <div class="btn btn-info" (click)="displayDetailsEvent(i)">{{project.name}}</div>
+      <div *ngIf="displayDetails">
+        <ul>
+          <li>Repo ID: {{project.id}}</li>
+          <li>Description: {{project.description}}</li>
+          <li>Created: {{project.created_at|date}}</li>
+          <li>Last push: {{project.pushed_at|date}}</li>
+        </ul>
+      </div>
   </div>
 </div>
 
