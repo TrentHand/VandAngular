@@ -25,8 +25,7 @@ export class DashboardComponent implements OnInit {
   }
 
   displayDetailsEvent(i) {
-    console.log('i', i);
-    this.displayDetails = !this.displayDetails;
+    this.projects[i].displayDetails = !this.projects[i].displayDetails;
   }
 
 }

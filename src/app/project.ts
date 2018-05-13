@@ -6,5 +6,5 @@ export class Project {
   pushed_at: string;
   description: string;
   stargazers_count: number;
-  displayDetails: false;
+  displayDetails: boolean;
 }

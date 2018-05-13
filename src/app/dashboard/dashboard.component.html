@@ -3,7 +3,7 @@
 <div class="row card-group">
   <div class="col-4"  *ngFor="let project of projects|filter : searchText; let i = index">
       <div class="btn btn-info" (click)="displayDetailsEvent(i)">{{project.name}}</div>
-      <div *ngIf="displayDetails">
+      <div *ngIf="project.displayDetails">
         <ul>
           <li>Repo ID: {{project.id}}</li>
           <li>Description: {{project.description}}</li>
