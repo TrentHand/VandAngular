@@ -11,7 +11,7 @@ import { FilterPipe} from '../filter.pipe';
 })
 export class DashboardComponent implements OnInit {
   projects: Project[] = [];
-  displayDetails = false;
+  // displayDetails = false;
 
   constructor(private githubService: GithubService) { }
 
@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
 
   displayDetailsEvent(i) {
     console.log('i', i);
-    this.displayDetails = !this.displayDetails;
+    this.projects[i].displayDetails = !this.projects[i].displayDetails;
   }
 
 }
