@@ -1,6 +1,6 @@
 import { GithubService } from './../services/github.service';
 import { Project } from './../project';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { cleanSession } from 'selenium-webdriver/safari';
 import { FilterPipe} from '../filter.pipe';
 
@@ -12,8 +12,6 @@ import { FilterPipe} from '../filter.pipe';
 export class DashboardComponent implements OnInit {
   projects: Project[] = [];
   // displayDetails = false;
-
-  @Input() searchText: string;
 
   constructor(private githubService: GithubService) { }
 
