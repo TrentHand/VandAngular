@@ -7,7 +7,9 @@
       <div *ngIf="project.displayDetails">
         <ul>
           <li>Repo ID: {{project.id}}</li>
+          <li>Stars: {{project.stargazers_count}}</li>
           <li>Description: {{project.description}}</li>
+          <li>URL: {{project.url}}</li>
           <li>Created: {{project.created_at|date}}</li>
           <li>Last push: {{project.pushed_at|date}}</li>
         </ul>
