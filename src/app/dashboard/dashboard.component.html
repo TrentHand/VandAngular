@@ -2,7 +2,7 @@
 <input class="form-control mr-sm-2" type="search" placeholder="Filter by name" aria-label="Search" [(ngModel)]="searchText">
 <p>Click any project to see details</p>
 <div class="row card-group">
-  <div class="col-4"  *ngFor="let project of projects|projectFilter : searchText; let i = index">
+  <div class="col-4"  *ngFor="let project of projects|projectFilter : searchText">
       <div class="btn btn-info" (click)="displayDetailsEvent(project.id)">{{project.name}}</div>
       <div *ngIf="project.displayDetails">
         <ul>
