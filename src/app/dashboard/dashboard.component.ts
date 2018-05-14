@@ -2,7 +2,8 @@ import { GithubService } from './../services/github.service';
 import { Project } from './../project';
 import { Component, OnInit } from '@angular/core';
 import { cleanSession } from 'selenium-webdriver/safari';
-import { FilterPipe} from '../filter.pipe';
+import { FilterPipe } from '../filter.pipe';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,7 @@ import { FilterPipe} from '../filter.pipe';
 export class DashboardComponent implements OnInit {
   projects: Project[] = [];
   displayDetails = false;
+  searchText: string;
 
   constructor(private githubService: GithubService) { }
 
@@ -24,8 +26,12 @@ export class DashboardComponent implements OnInit {
       .subscribe(projects => this.projects = projects);
   }
 
-  displayDetailsEvent(i) {
-    this.projects[i].displayDetails = !this.projects[i].displayDetails;
+  displayDetailsEvent(id) {
+    this.projects.forEach((project) => {
+      if (project.id === id) {
+        project.displayDetails = !project.displayDetails;
+      }
+    });
   }
 
 }

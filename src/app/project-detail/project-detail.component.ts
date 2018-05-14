@@ -20,14 +20,8 @@ export class ProjectDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getProject();
   }
 
-  getProject(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.githubService.getProject(id)
-      .subscribe(project => this.project = project);
-  }
 
   goBack(): void {
     this.location.back();

@@ -1,5 +1,4 @@
 import { MessageService } from './message.service';
-import { PROJECTS } from './../projects';
 import { Project } from './../project';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -32,12 +31,6 @@ export class GithubService {
         return response.items.map(project => Object.assign(new Project(), project));
       })
     );
-  }
-
-  getProject(id: number): Observable<Project> {
-    console.log('getProject called');
-    this.messageService.add(`GithubService: fetched project id=${id}`);
-    return of(PROJECTS.find(project => project.id === id));
   }
 
 }

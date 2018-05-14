@@ -1,5 +1,4 @@
 import { GithubService } from './../services/github.service';
-import { PROJECTS } from '../projects';
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../project';
 

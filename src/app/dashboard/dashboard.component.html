@@ -1,8 +1,9 @@
 <h3>Top Projects</h3>
+<input class="form-control mr-sm-2" type="search" placeholder="Filter by name" aria-label="Search" [(ngModel)]="searchText">
 <p>Click any project to see details</p>
 <div class="row card-group">
-  <div class="col-4"  *ngFor="let project of projects|filter : searchText; let i = index">
-      <div class="btn btn-info" (click)="displayDetailsEvent(i)">{{project.name}}</div>
+  <div class="col-4"  *ngFor="let project of projects|projectFilter : searchText; let i = index">
+      <div class="btn btn-info" (click)="displayDetailsEvent(project.id)">{{project.name}}</div>
       <div *ngIf="project.displayDetails">
         <ul>
           <li>Repo ID: {{project.id}}</li>
